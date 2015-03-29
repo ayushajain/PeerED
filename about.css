@@ -1,0 +1,38 @@
+.edit{
+   margin-top: 3%;
+
+
+}
+
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y:hidden;
+}
+
+.background{
+   width : 100%;
+   z-index: -5;
+
+}
+
+.about{
+   position: absolute;
+   z-index: -2;
+   top: 5%;
+   left: 6%;
+   font-size: 240%; 
+   font-family: 'Open Sans', Helvetica, sans-serif;
+   color: white;
+   resize: both;
+    overflow: auto;
+	resize: none;
+}
+
+#wrap {
+    min-width: 600px;
+}
+
+p{
+  background-color: blue;
+}

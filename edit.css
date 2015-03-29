@@ -1,0 +1,121 @@
+.edit{
+	margin-top: 3%;
+
+
+}
+
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y:hidden;
+}
+
+.background{
+	width : 100%;
+	z-index: 0;
+
+}
+
+.title{
+   position: absolute;
+   z-index: 0;
+   top: 11%;
+   left: 6%;
+   font-size: 240%; 
+   font-family: 'Open Sans', Helvetica, sans-serif;
+   color: white;
+   resize: both;
+    overflow: auto;
+	resize: none;
+}
+.comments {
+	 position: absolute;
+   z-index: 10;
+   top: 20%;
+   left: 72%;
+   font-size: 120%; 
+   font-family: 'Open Sans', Helvetica, sans-serif;
+   color: white;
+   resize: both;
+    overflow: auto;
+	resize: none;
+
+}
+
+
+.submission{
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	font-size: 120%; 
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	color: white;
+	resize: both;
+    overflow: auto;
+	resize: none;
+	z-index: 1;
+}
+
+.essayInput{
+	position: absolute;
+	top: 23.82%;
+	left: 25%;
+	z-index: 3;
+	resize: none;
+	z-index: 1;
+
+}
+
+
+#wrap {
+    min-width: 600px;
+}
+
+.info{
+	position: absolute;
+	top: 20%;
+	left: 6%;
+	font-size: 120%; 
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	color: white;
+	resize: both;
+    overflow: auto;
+	resize: none;
+	z-index: 1;
+
+
+}
+
+#editor-container{
+	top : 30%;
+	background-color: white;
+
+}
+
+#content-container{
+	position: absolute;
+	top: 22.5%;
+	left: 20%;
+}
+
+
+.submit {
+	position: absolute;
+	top: 59%;
+	left: 6%;
+	font-size: 120%; 
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	z-index: 1;
+
+}
+
+.commentInput{
+	position: absolute;
+	top: 22.5%;
+	left: 72%;
+	z-index: 3;
+	resize: none;
+	z-index: 1;
+}
+
+

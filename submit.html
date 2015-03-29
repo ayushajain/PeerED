@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> PeerED </title> 
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="dropbar.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="submit.css">
+		<script type="text/javascript" src="submit.js"></script>
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+	</head>
+
+	<body>
+		
+
+
+
+
+
+<!-- ////////////////Top Bar////////////////// -->
+<div id='cssmenu'>
+<ul>
+   <li><a href='index.html' class ="home"><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Edit</span></a>
+      <ul>
+         <li ><a href='persuasive.html' style ="z-index: 50"><span>Persuasive</span></a>
+         </li>
+         <li ><a href='expository.html' style ="z-index: 50"><span>Expository</span></a>
+         </li>
+         <li ><a href='research.html' style ="z-index: 50"><span>Research</span></a>
+         </li>
+         <li ><a href='narrative.html' style ="z-index: 50"><span>Narrative</span></a>
+         </li>
+		 <li ><a href='allcontent.html' style ="z-index: 50"><span>All Content</span></a>
+         </li>
+      </ul>
+   </li>
+   <li><a href='submit.html'><span>Upload</span></a></li>
+   <li><a href='about.html'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+   
+</ul>
+</div>
+
+<!-- ///////////////////////////////////////////// -->
+
+<!-- background picture -->
+<img src="background.jpg" class ="background" style = "position: absolute">
+
+<!-- submission  -->
+<p class = "title" >Submit a new Essay
+</p>
+
+<div  class = "submission">
+<form>
+Name:<br>
+<input type="text" class ="name" placeholder="John Doe" name="name" style ="color:black">
+<br><br>
+Email:<br> 
+<input type="text" class ="email" placeholder="johndoe@example.com" name="name" style ="color:black">
+<br><br>
+Submission Title:<br>
+<input type="text" class ="essayTitle" placeholder="Example" name="submissionTitle" style ="color:black">
+</form>
+</div>
+
+<select class="type">
+  <option value="persuasive">Persuasive</option>
+  <option value="expository">Expository</option>
+  <option value="research">Research</option>
+  <option value="narrative">Narrative</option>
+</select>
+
+<!-- essay text box-->
+<form>
+<div  class = "submission" style ="left: 25%">
+Essay:
+</div>
+
+<textarea placeholder="Copy and Paste your essay here." class ="essayInput" rows="22" cols="102"></textarea>
+</form>
+
+
+<button type="button" class ="btn btn-info submit">Submit</button>
+<script>
+
+	var myDataRef = new Firebase('https://luminous-fire-1623.firebaseio.com/');
+	$(".submit").click(function() {
+		var name = $(".name").val();
+		var email = $(".email").val();
+		var title = $(".essayTitle").val();
+		var essay = $(".essayInput").val();
+		var type = $(".type").val();
+		for(var i = 0; i < essay.length; i++){
+			if(essay.charAt(i) == "\""){
+				essay = essay.substring(0,i) + "^" + essay.substring(i+1);
+			}else if(essay.charAt(i) == "\'"){
+				essay = essay.substring(0,i) + "`" + essay.substring(i+1);
+			}
+
+		}
+		if(!(name == "" || email == "" || title == "" || essay =="" || essay.length < 100)){
+			myDataRef.push({name: name, email: email, title : title, type : type, essay : essay});
+			alert("Your submission has been recieved.");
+			document.location.href = "allcontent.html";
+		}else{
+			if(name == "" || email == "" || title == "" || essay ==""){
+				alert("Please complete the empty sections.");
+			
+			}else{
+				alert("You must have more than 100 characters in the essay section.");
+			}
+		}
+	});
+
+</script>
+
+	</body>
+
+
+</html>

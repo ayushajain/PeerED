@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> PeerED </title> 
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="dropbar.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="allcontent.css">
+		<script type="text/javascript" src="test.js"></script>
+      
+	</head>
+
+	<body>
+		
+
+
+
+
+
+<!-- ////////////////Top Bar////////////////// -->
+<div id='cssmenu'>
+<ul>
+   <li><a href='index.html' class ="home"><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Edit</span></a>
+      <ul>
+         <li ><a href='persuasive.html' style ="z-index: 50"><span>Persuasive</span></a>
+         </li>
+         <li ><a href='expository.html' style ="z-index: 50"><span>Expository</span></a>
+         </li>
+         <li ><a href='research.html' style ="z-index: 50"><span>Research</span></a>
+         </li>
+         <li ><a href='narrative.html' style ="z-index: 50"><span>Narrative</span></a>
+         </li>
+		 <li ><a href='allcontent.html' style ="z-index: 50"><span>All Content</span></a>
+         </li>
+      </ul>
+   </li>
+   <li><a href='submit.html'><span>Upload</span></a></li>
+   <li><a href='about.html'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+   
+</ul>
+</div>
+<!-- ///////////////////////////////////////////// -->
+
+<!-- background picture -->
+<ul id ="emaillist">
+</ul>
+
+<img src="background.jpg" class ="background" style = "position: absolute">
+
+
+<!-- slogan  -->
+<p class = "title" >Choose a Narrative Essay
+</p>
+
+<table class="table" id="table1"><tbody id="tablebody"></tbody></table>
+
+<script src="https://cdn.firebase.com/js/client/1.0.6/firebase.js"></script>
+		<script>
+var ref = new Firebase("https://luminous-fire-1623.firebaseio.com/");
+	var emaillist = $("#emaillist");
+		// Attach an asynchronous callback to read the data at our posts reference
+		
+			ref.on("value", function(snapshot) {
+				var num = 0;
+				snapshot.forEach(function(child){
+					if(child.val().type == "narrative"){
+					var submission = child.val();
+					num++;
+					if(num == 5){
+						emaillist.append("<br>");
+						num = 0;
+					}
+					
+			
+					emaillist.append("<button class='btn btn-info essays' style ='width: 290px' id = '"+JSON.stringify(submission)+"'>" + submission.title + "<br>By " + submission.name + "</button>");
+
+					$(".btn").click(function() {
+						console.log("submission");
+						sessionStorage.myObject = this.id;
+						document.location.href = "edit.html";
+					});
+					}
+				})
+			});
+			
+</script>
+
+	</body>
+
+	
+
+</html>
+
+f
