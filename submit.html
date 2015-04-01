@@ -173,7 +173,7 @@ Essay:
 		if(!(name == "" || email == "" || title == "" || essay =="" || essay.length < 100)){
 			myDataRef.push({name: name, email: email, title : title, type : type, essay : essay});
 			alert("Your submission has been recieved.");
-			document.location.href = "allcontent.html";
+			window.location.replace("http://ayushajain.github.io/PeerEd/allcontent.html");
 		}else{
 			if(name == "" || email == "" || title == "" || essay ==""){
 				alert("Please complete the empty sections.");
