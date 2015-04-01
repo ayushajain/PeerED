@@ -13,7 +13,7 @@ body {
 .background{
 	width : 100%;
 	z-index: -5;
-
+	border: 0;
 }
 
 .title{
@@ -54,8 +54,8 @@ body {
 
 .submit {
 	position: absolute;
-	top: 59%;
-	left: 6%;
+	left : 15px;
+	top : 300px;
 	font-size: 120%; 
 	font-family: 'Open Sans', Helvetica, sans-serif;
 	z-index: 1;
@@ -64,8 +64,22 @@ body {
 
 .type {
 	position: absolute;
-	top: 45%;
-	left: 6%;
 	font-family: 'Open Sans', Helvetica, sans-serif;
 	height: 30px;
+	color: black;
+}
+
+#contactForm {
+	color: white;
+
+}
+
+.essayInput {
+	left : 15px;
+	top : 30px;
+	position: absolute;
+}
+
+#contact {
+	position: fixed;
 }
