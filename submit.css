@@ -7,7 +7,7 @@
 body {    
     margin: 0 !important;
     padding: 0 !important;
-    overflow-y:hidden;
+    /*overflow:hidden;*/
 }
 
 .background{
@@ -80,30 +80,21 @@ body {
 	position: absolute;
 }
 
-#contact {
-	position: fixed;
-}
 
 
 /*bootstrap css*/
-.intro {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url(background.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+
+#contact {
+	display: table-cell;
+    vertical-align: middle;
+    position: fixed;
 }
 
-#contact{
-    display: table-cell;
-    vertical-align: middle;
+
+
+#contact .container{
+    padding-top: 50px;
+	height: 10%;
 }
 
 .intro .intro-body .brand-heading {
@@ -131,12 +122,31 @@ body {
 
 #contact {
 	width: 100%;
-	background: url(background.jpg) no-repeat bottom center scroll;
-    background-color: #000;
     position: absolute;
     background-position: 100% top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    color: white;
 }
+
+.submitBoxes {
+	height: 10px;
+}
+
+.back{
+	background-color: #3DA7BF;
+	color: white;
+	background: -webkit-linear-gradient(#3DA7BF, #2A89A1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#3DA7BF, #2A89A1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#3DA7BF, #2A89A1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#3DA7BF, #2A89A1); /* Standard syntax */
+	font-size: 2em;
+	z-index: 100;
+	margin-bottom: 0 !important;
+}
+
+
+.text{
+	color: white;
+}
+
+
+/*menu css*/
