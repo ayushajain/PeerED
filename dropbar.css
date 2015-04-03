@@ -28,6 +28,8 @@
   display: none;
 }
 #cssmenu {
+  position: fixed;
+  margin-top: -30px;
   width: auto;
   font-family: 'Open Sans', Helvetica, sans-serif;
   background: #39b1cc;
@@ -37,6 +39,7 @@
   background: -o-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
   background: -ms-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
   background: linear-gradient(to bottom, #51bbd2 0%, #2d97af 100%);
+  max-height: 50px;
 }
 #cssmenu > ul {
   background: url('images/bg.png');
@@ -89,10 +92,7 @@
   right: 17px;
   top: 22px;
 }
-#cssmenu > ul > li.has-sub.active > a::after,
-#cssmenu > ul > li.has-sub:hover > a {
-  border-top-color: #ffffff;
-}
+
 #cssmenu ul ul {
   position: absolute;
   left: -9999px;
@@ -100,6 +100,7 @@
   padding-top: 6px;
   font-size: 13px;
   opacity: 0;
+
   -webkit-transition: top 0.2s ease, opacity 0.2s ease-in;
   -moz-transition: top 0.2s ease, opacity 0.2s ease-in;
   -ms-transition: top 0.2s ease, opacity 0.2s ease-in;
@@ -209,15 +210,8 @@
   right: auto;
   left: 17px;
 }
-#cssmenu ul ul li.has-sub.active > a::after,
-#cssmenu ul ul li.has-sub:hover > a::after {
-  border-left-color: #333333;
-}
-#cssmenu.align-right ul ul li.has-sub.active > a::after,
-#cssmenu.align-right ul ul li.has-sub:hover > a::after {
-  border-right-color: #333333;
-  border-left-color: transparent;
-}
+
+
 @media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu {
     background: #39b1cc;
@@ -315,8 +309,44 @@
     right: 25px;
     top: 28px;
   }
-  #cssmenu > ul > li.has-sub > a::after,
-  #cssmenu ul ul li.has-sub > a::after {
-    display: none;
-  }
+  
+}
+
+@media(min-width:768px) {
+    .navbar-fixed-top {
+        padding: 25px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 3em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
+
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 3em;
+    }
+}
+
+nav div div ul:last-child {
+    color: transparent;
+}
+
+ul{
+   max-height: 50px;
+   
+}
+
+#cssmenu {
+    position: absolute;
+    left: 0px;
+    width: 100%;
 }
